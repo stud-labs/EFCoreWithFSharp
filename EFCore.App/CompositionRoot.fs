@@ -14,8 +14,7 @@ open Microsoft.EntityFrameworkCore
 let configureSqlServerContext =
     (fun () ->
         let optionsBuilder = new DbContextOptionsBuilder<SerieContext>();
-        // optionsBuilder.UseSqlServer(@"Server=.\SQLExpress;Database=Series;Integrated Security=SSPI;") |> ignore
-        optionsBuilder.UseSqlServer(@"Server=imp.isclan.ru;Database=Series;User=dbuser;Password=Pa$$w0rd;Trusted_connection=True;") |> ignore
+        optionsBuilder.UseSqlServer(@"Server=imp.isclan.ru;Database=Series;User=<dbuser>;Password=<password>;Trusted_connection=True;") |> ignore
 
         new SerieContext(optionsBuilder.Options)
     )
